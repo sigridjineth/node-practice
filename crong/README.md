@@ -19,3 +19,7 @@
 ## static 파일 디렉토리 설정
 
 `app.use(express.static("public"));`
+
+## body-parser
+
+- POST일 때 사용함
