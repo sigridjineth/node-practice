@@ -1,6 +1,5 @@
 # Starting Express.js
-
-## https://medium.com/javascript-in-plain-english/typescript-with-node-and-express-js-why-when-and-how-eb6bc73edd5d
+* https://medium.com/javascript-in-plain-english/typescript-with-node-and-express-js-why-when-and-how-eb6bc73edd5d
 
 ## nodemon
 
@@ -25,3 +24,9 @@
 - POST일 때 사용함
 
 ## ejs template engine
+
+## Can't find module TypeScript
+* ```npm link typescript```
+
+## mysql2
+* mysql2를 사용해야 8버전을 지원한다.
