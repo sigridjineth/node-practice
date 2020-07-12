@@ -1,10 +1,10 @@
 import express = require("express");
 
 const app: express.Application = express();
-const path: any = require("path");
-const bodyParser: any = require("body-parser");
-const mysql: any = require("mysql2");
-const router: any = require("./router/index");
+const path = require("path");
+const bodyParser = require("body-parser");
+const mysql = require("mysql2");
+const router = require("./router/index");
 
 export const connection = mysql.createConnection({
   host: 'localhost',

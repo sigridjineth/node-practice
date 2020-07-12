@@ -1,7 +1,7 @@
 import express = require("express");
 import {connection} from "../app";
 
-const router: any = express.Router();
+const router = express.Router();
 const bodyParser = require("body-parser");
 
 router.use(bodyParser.json());
