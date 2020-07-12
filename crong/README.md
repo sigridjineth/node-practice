@@ -30,3 +30,8 @@
 
 ## mysql2
 * mysql2를 사용해야 8버전을 지원한다.
+
+## router
+* ```express.Router()```
+* https://wanago.io/2018/12/03/typescript-express-tutorial-routing-controllers-middleware/
+* https://helloinyong.tistory.com/124

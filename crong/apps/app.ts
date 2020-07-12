@@ -4,6 +4,7 @@ const app: express.Application = express();
 const path: any = require("path");
 const bodyParser: any = require("body-parser");
 const mysql: any = require("mysql2");
+const main: any = require("./router/main");
 
 export const connection = mysql.createConnection({
   host: 'localhost',
@@ -27,6 +28,9 @@ const result: any = async() => {
   }
 }
 
+// router configuration
+app.use('/main', main);
+
 app.get("/", function (request, response) {
   console.log(result);
   response.send("Hello World!");
@@ -46,10 +50,6 @@ app.use(
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-
-app.get("/main", function (request, response) {
-  response.sendFile(path.join(__dirname, "..", "public", "main.html"));
-});
 
 app.post("/email_post", function (request, response) {
   // get : req.param('email')
