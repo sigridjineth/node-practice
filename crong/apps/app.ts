@@ -4,8 +4,7 @@ const app: express.Application = express();
 const path: any = require("path");
 const bodyParser: any = require("body-parser");
 const mysql: any = require("mysql2");
-const main: any = require("./router/main");
-const email: any = require("./router/email");
+const router: any = require("./router/index");
 
 export const connection = mysql.createConnection({
   host: 'localhost',
@@ -30,14 +29,8 @@ const result: any = async() => {
 }
 
 // router configuration
-app.use('/main', main);
-app.use('/email', email);
+app.use(router);
 app.use(bodyParser.json());
-
-app.get("/", function (request, response) {
-  console.log(result);
-  response.send("Hello World!");
-});
 
 app.listen(3006, function () {
   console.log("Example app listening on port 3006!");
