@@ -16,18 +16,6 @@ export const connection = mysql.createConnection({
 
 connection.connect();
 
-const result: any = async() => {
-  const conn: any = connection.getConnection();
-  try {
-    const [row]: any = await conn.query('SELECT * FROM node_user')
-    return row;
-  } catch (e) {
-    throw new Error(e);
-  } finally {
-    conn.release();
-  }
-}
-
 // router configuration
 app.use(router);
 app.use(bodyParser.json());

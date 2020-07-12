@@ -56,3 +56,12 @@
 * https://stackoverflow.com/questions/11625519/how-to-access-the-request-body-when-posting-using-node-js-and-express
 
 ## 나 같으면 무조건 global로 설치...
+* global install과 local install에 대해 알아보자.
+* package.json은 무슨 역할을 하나?
+* dependencies와 dev-dependencies는 무슨 차이인가?
+
+# response.sendFile is not a function
+* 다음과 같이 request와 response를 다 명시해야 한다.
+```
+router.get('/', function (request: express.Request, response: express.Response) {
+```
