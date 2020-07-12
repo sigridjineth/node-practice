@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <form action="/email_post" method="post">
+    <form action="/email/form" method="post">
         email: <input type="text" name="email" /><br /> submit <input type="submit" />
     </form>
     <button class="ajaxsend">ajaxsend</button>
@@ -17,14 +17,14 @@
             .querySelector(".ajaxsend")
             .addEventListener("click", function() {
                 let inputData = document.forms[0].elements[0].value;
-                sendAjax("http://localhost:3006/ajax_send_email", inputData);
+                sendAjax("http://localhost:3006/email/ajax", inputData);
             });
 
         function sendAjax(url, data) {
             let mail = {
                 email: data,
             };
-            sendData = JSON.stringify(mail);
+            const sendData = JSON.stringify(mail);
             let xhr = new XMLHttpRequest();
             xhr.open("POST", url);
             xhr.setRequestHeader("Content-Type", "application/json");

@@ -5,6 +5,7 @@ const path: any = require("path");
 const bodyParser: any = require("body-parser");
 const mysql: any = require("mysql2");
 const main: any = require("./router/main");
+const email: any = require("./router/email");
 
 export const connection = mysql.createConnection({
   host: 'localhost',
@@ -30,6 +31,8 @@ const result: any = async() => {
 
 // router configuration
 app.use('/main', main);
+app.use('/email', email);
+app.use(bodyParser.json());
 
 app.get("/", function (request, response) {
   console.log(result);
@@ -50,26 +53,3 @@ app.use(
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-
-app.post("/email_post", function (request, response) {
-  // get : req.param('email')
-  console.log(request.body.email);
-  response.render("email.ejs", { email: request.body.email });
-});
-
-app.post("/ajax_send_email", function (request, response) {
-  console.log(request.body.email);
-  const responseData = {result: "OK", email: request.body.email};
-  const query = connection.query("SELECT name from node_user WHERE email='" + request.body.email + "'", function (err: any, rows: any) {
-    if (err) {
-      throw err;
-    }
-    if (rows[0]) {
-      console.log(rows[0].name)
-      return;
-    }
-    console.log('nothing found' + rows[0])
-    return;
-  })
-  response.json(responseData);
-});

@@ -6,4 +6,4 @@ router.get('/main', (response: express.Response) => {
     response.sendFile(path.join(__dirname, "..", "..", "public", "main.html"));
 });
 
-export = router;
+module.exports = router;

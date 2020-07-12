@@ -38,3 +38,21 @@
 
 ## Response와 Request의 타입은 express.Response, express.Request
 * https://stackoverflow.com/questions/27676884/explicitly-specifying-types-for-express-application-request-response
+
+## WebStorm debugger 설정
+* https://intellij-support.jetbrains.com/hc/en-us/community/posts/360003518240-debugging-a-TypeScript-script-with-NodeJS
+
+## TypeError: Router.use() requires a middleware function but got a Object
+* ```module.exports = router;``` 가 명시되어 있는 지 확인
+* 만약에도 문제가 있으면 컴파일된 자바스크립트 파일을 지우고 다시 실행해본다.
+
+## 컴파일된 자바스크립트 파일 모두 지우는 방법
+* https://stackoverflow.com/questions/34565872/how-to-delete-compiled-js-files-from-previous-typescript-ts-files
+* ```tsc --build --clean```
+
+## body-parser
+* 설치해야 제대로 가능
+* ```const urlencodedParser = bodyParser.urlencoded({ extended: true })```
+* https://stackoverflow.com/questions/11625519/how-to-access-the-request-body-when-posting-using-node-js-and-express
+
+## 나 같으면 무조건 global로 설치...
