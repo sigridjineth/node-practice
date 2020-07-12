@@ -35,3 +35,6 @@
 * ```express.Router()```
 * https://wanago.io/2018/12/03/typescript-express-tutorial-routing-controllers-middleware/
 * https://helloinyong.tistory.com/124
+
+## Response와 Request의 타입은 express.Response, express.Request
+* https://stackoverflow.com/questions/27676884/explicitly-specifying-types-for-express-application-request-response
